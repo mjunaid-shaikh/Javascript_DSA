@@ -1,4 +1,4 @@
-//#region 
+//#region. find odd even & Prime numbers
 let oddEvenPrimeArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function getPrime(num) {
@@ -30,5 +30,105 @@ function getOddEvenPrimeNum(arr) {
 
     return { odd, even, prime }
 }
-console.log(getOddEvenPrimeNum(oddEvenPrimeArr))
+// console.log(getOddEvenPrimeNum(oddEvenPrimeArr))
+
+
+
 //#endregion
+
+
+//#region  find two element whose sum equal to target
+let sumElementAArr = [10, 12, 14, 16, 18, 20];
+let target = 34;
+function getSumElement(arr, target) {
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (left < right) {
+        let sum = arr[left] + arr[right];
+        if (sum === target) {
+            return [arr[left], arr[right]]
+        }
+        if (sum < target) {
+            left++
+        } else {
+            right--
+        }
+    }
+    return null
+}
+// console.log(getSumElement(sumElementAArr, target))
+
+//#endregion
+
+
+//#region get flat Array
+let flatArr = [1, 2, [3, 4, [5, 6], 7], 8, 9]
+let result = []
+function getFlatArray(arr) {
+    // const result = arr.flat(Infinity);
+    for (let i = 0; i < arr.length; i++) {
+        if (!Array.isArray(arr[i])) {
+            result.push(arr[i])
+        } else {
+            getFlatArray(arr[i]);
+        }
+    }
+}
+getFlatArray(flatArr);
+console.log('result', result)
+
+//#endregion
+
+
+//#region remove duplicate element from an arr
+let dupArr = [1, 2, 3, 4, 1, 2, 3, 2, 3, 5, 3, 2, 1, 4];
+function getUniqueArr(arr) {
+    // method one
+    // let result = [...new Set(arr)]
+    // return result;
+
+    //method two
+    // let result2 = []
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (!result2.includes(arr[i])) {
+    //         result2.push(arr[i])
+    //     }
+    // }
+    // return result2;
+
+
+
+
+}
+console.log(getUniqueArr(dupArr))
+
+//#endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
