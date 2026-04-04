@@ -37,7 +37,7 @@ function getOddEvenPrimeNum(arr) {
 //#endregion
 
 
-//#region  find two element whose sum equal to target
+//#region find two element whose sum equal to target
 let sumElementAArr = [10, 12, 14, 16, 18, 20];
 let target = 34;
 function getSumElement(arr, target) {
@@ -96,17 +96,24 @@ function getUniqueArr(arr) {
     //     }
     // }
     // return result2;
-
-
-
-
 }
-console.log(getUniqueArr(dupArr))
+// console.log(getUniqueArr(dupArr))
 
 //#endregion
 
 
+//#region  duplicate count
+let dupCountArr = [1, 2, 3, 4, 1, 2, 3, 4, 2, 3, 2, 3, 2, 1, 2, 3]
+function findDuplicate(arr) {
+    let obj = {}
+    for (let i = 0; i < arr.length; i++) {
+        obj[arr[i]] = (obj[arr[i]] | 0) + 1
+    }
+    return obj
+}
+console.log(findDuplicate(dupCountArr));
 
+//#endregion
 
 
 
