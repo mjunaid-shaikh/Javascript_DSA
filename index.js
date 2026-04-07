@@ -37,7 +37,7 @@ function getOddEvenPrimeNum(arr) {
 //#endregion
 
 
-//#region find two element whose sum equal to target
+//#region GET SUM OF TWO ARRAY
 let sumElementAArr = [10, 12, 14, 16, 18, 20];
 let target = 34;
 function getSumElement(arr, target) {
@@ -76,7 +76,7 @@ function getFlatArray(arr) {
     }
 }
 getFlatArray(flatArr);
-console.log('result', result)
+// console.log('result', result)
 
 //#endregion
 
@@ -88,14 +88,14 @@ function getUniqueArr(arr) {
     // let result = [...new Set(arr)]
     // return result;
 
-    //method two
-    // let result2 = []
-    // for (let i = 0; i < arr.length; i++) {
-    //     if (!result2.includes(arr[i])) {
-    //         result2.push(arr[i])
-    //     }
-    // }
-    // return result2;
+    // method two
+    let result2 = []
+    for (let i = 0; i < arr.length; i++) {
+        if (!result2.includes(arr[i])) {
+            result2.push(arr[i])
+        }
+    }
+    return result2;
 }
 // console.log(getUniqueArr(dupArr))
 
@@ -105,23 +105,74 @@ function getUniqueArr(arr) {
 //#region  duplicate count
 let dupCountArr = [1, 2, 3, 4, 1, 2, 3, 4, 2, 3, 2, 3, 2, 1, 2, 3]
 function findDuplicate(arr) {
-    let obj = {}
-    for (let i = 0; i < arr.length; i++) {
-        obj[arr[i]] = (obj[arr[i]] | 0) + 1
-    }
-    return obj
+    let result = arr.reduce((acc, curr, index) => {
+        acc[curr] = (acc[curr] | 0) + 1;
+        return acc;
+    }, {});
+
+    return result
+    // let obj = {}
+    // for (let i = 0; i < arr.length; i++) {
+    //     obj[arr[i]] = (obj[arr[i]] | 0) + 1
+    // }
+    // return obj
 }
 console.log(findDuplicate(dupCountArr));
+//#endregion
+
+
+//#region  Permutation
+let str = "CMS"
+function getPermutation(str) {
+    if (str.length <= 1) return [str]
+    let permResult = [];
+
+    for (let i = 0; i < str.length; i++) {
+        let firstChar = str[i];
+        let remainChar = str.slice(0, i) + str.slice(i + 1);
+        let permutastions = getPermutation(remainChar);
+
+        for (let P of permutastions) {
+            permResult.push(firstChar + P)
+        }
+    }
+    return permResult;
+}
+// console.log(getPermutation(str))
 
 //#endregion
 
 
+//#region GET SECOND HIGHEST NUMBER FROM THE ARRAY
+let arrSH = [5, 6, 8, 4, 2];
+function getSecondHigestNumber(arr) {
+    let max = Math.max(...arr)
+    let secondHN = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== max && arr[i] > secondHN) {
+            secondHN = arr[i]
+        }
+    }
+    return secondHN
+}
+console.log(getSecondHigestNumber(arrSH))
+
+//#endregion
 
 
+function removeDuplicate(arr) {
+    let result = [];
 
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== arr[i - 1]) {
+            result.push(arr[i]);
+        }
+    }
+    return result;
+}
 
-
-
+console.log(removeDuplicate([1, 2, 2, 3, 3, 4, 4, 4]));
 
 
 
