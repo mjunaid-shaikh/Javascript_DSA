@@ -161,6 +161,7 @@ console.log(getSecondHigestNumber(arrSH))
 //#endregion
 
 
+//#region  REMOVE DUPLICATE FROM AN ARRAY
 function removeDuplicate(arr) {
     let result = [];
 
@@ -172,14 +173,36 @@ function removeDuplicate(arr) {
     return result;
 }
 
-console.log(removeDuplicate([1, 2, 2, 3, 3, 4, 4, 4]));
+// console.log(removeDuplicate([1, 2, 2, 3, 3, -2, -2, 1, 4, 4, 4].sort((a, b) => a - b)));
+//#endregion
 
 
+//#region  REVERSE THE ARRAY
+let reverseArr = ['j', 'u', 'n', 'a', 'i', 'd'];
+function getReverse(arr) {
+    let result = []
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+        result.push(arr[i])
+    }
+    return result
+}
+console.log(getReverse(reverseArr))
 
 
-
-
-
+//#region  CLOSURE
+function increment() {
+    let count = 0;
+    return function () {
+        count++
+        return count
+    }
+}
+let resultInc = increment()
+// console.log(resultInc());
+// console.log(resultInc());
+// console.log(resultInc());
+//#endregion
 
 
 
