@@ -205,9 +205,42 @@ let resultInc = increment()
 //#endregion
 
 
+//#region 
+function getStrCount(str) {
+    let resultStr = "";
+
+    for (let i = 0; i < str.length; i += 2) {
+        let char = str[i];
+        let count = Number(str[i + 1]);
+
+        // resultStr += count === 0 ? char : char.repeat(count);
+        resultStr += char.repeat(count);
+    }
+    return resultStr;
+}
+
+let custStr = "a2b3c1d2";
+console.log(getStrCount(custStr));
+//#endregion
 
 
+//#region 
+function getStrCount2(str) {
+    let resultStr = "";
 
+    for (let i = 0; i < str.length; i += 2) {
+        let char = str[i + 1];
+        let count = Number(str[i]);
+
+        // resultStr += count === 0 ? char : char.repeat(count);
+        resultStr += char.repeat(count);
+    }
+    return resultStr;
+}
+
+let custStr2 = "2a3b1c";
+console.log(getStrCount2(custStr2));
+//#endregion
 
 
 
