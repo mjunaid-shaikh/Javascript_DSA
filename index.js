@@ -57,7 +57,7 @@ function getSumElement(arr, target) {
     }
     return null
 }
-// console.log(getSumElement(sumElementAArr, target))
+console.log(':-', getSumElement(sumElementAArr, target))
 
 //#endregion
 
@@ -143,7 +143,7 @@ function getPermutation(str) {
 //#endregion
 
 
-//#region GET SECOND HIGHEST NUMBER FROM THE ARRAY
+//#region GET SECOND HIGHEST NUMBER
 let arrSH = [5, 6, 8, 4, 2];
 function getSecondHigestNumber(arr) {
     let max = Math.max(...arr)
@@ -187,7 +187,7 @@ function getReverse(arr) {
     }
     return result
 }
-console.log(getReverse(reverseArr))
+// console.log(getReverse(reverseArr))
 
 
 //#region  CLOSURE
@@ -244,5 +244,16 @@ console.log(getStrCount2(custStr2));
 
 
 
+// example to event loop
+console.log('start')
 
+setTimeout(() => {
+    console.log('macroTask')
+}, 0)
+
+Promise.resolve().then(() => {
+    console.log('MicroTask')
+})
+
+console.log('End')
 
