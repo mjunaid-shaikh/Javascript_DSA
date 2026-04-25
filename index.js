@@ -156,7 +156,7 @@ function getSecondHigestNumber(arr) {
     }
     return secondHN
 }
-console.log(getSecondHigestNumber(arrSH))
+// console.log(getSecondHigestNumber(arrSH))
 
 //#endregion
 
@@ -239,7 +239,7 @@ function getStrCount2(str) {
 }
 
 let custStr2 = "2a3b1c";
-console.log(getStrCount2(custStr2));
+// console.log(getStrCount2(custStr2));
 //#endregion
 
 
@@ -257,3 +257,39 @@ Promise.resolve().then(() => {
 
 console.log('End')
 
+function getPrimeN(num) {
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num <= 1) return false;
+
+        if (num % i === 0) return false
+    }
+    return true
+}
+console.log(getPrimeN(11));
+
+
+//#region   GROUP BY CITIES
+let usersX = [
+    { name: "John", city: "Delhi" },
+    { name: "Sam", city: "Mumbai" },
+    { name: "Jack", city: "Delhi" },
+    { name: "Steave", city: "Delhi" },
+    { name: "Keenu", city: "Bangalore" },
+]
+
+function groupByCities(arr) {
+    let group = {}
+
+    for (let i = 0; i < arr.length; i++) {
+        let city = arr[i].city;
+        let name = arr[i].name;
+
+        if (!group[city]) {
+            group[city] = []
+        }
+        group[city].push(name)
+    }
+    return group
+}
+// console.log(groupByCities(usersX))
+//#endregion
