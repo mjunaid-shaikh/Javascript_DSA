@@ -293,3 +293,19 @@ function groupByCities(arr) {
 }
 // console.log(groupByCities(usersX))
 //#endregion
+
+//#region 
+
+// let obj1 = "Junaid"
+let obj1 = {
+    name: "Mohammed Junaid",
+    id: 1
+}
+
+if (obj1 !== null && typeof obj1 === 'object' && !Array.isArray(obj1)) {
+    console.log('Data Type:- ', 'Object')
+} else {
+    console.log(false)
+}
+
+//#endregion
