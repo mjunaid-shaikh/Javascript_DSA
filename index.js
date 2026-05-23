@@ -309,3 +309,29 @@ if (obj1 !== null && typeof obj1 === 'object' && !Array.isArray(obj1)) {
 }
 
 //#endregion
+
+
+//#region ADD SAME CITY VALUES
+let obj = [
+    { city: "mumbai", amount: 50 },
+    { city: "bengaluru", amount: 50 },
+    { city: "mumbai", amount: 50 },
+    { city: "delhi", amount: 50 }
+]
+
+function getGrouped(arr) {
+    let group = {}
+    for (let i = 0; i < arr.length; i++) {
+        let city = arr[i].city
+        let amount = arr[i].amount
+
+        if (group[city]) {
+            group[city] += amount
+        } else {
+            group[city] = amount
+        }
+    }
+    return group
+}
+console.log(getGrouped(obj))
+//#endregion
